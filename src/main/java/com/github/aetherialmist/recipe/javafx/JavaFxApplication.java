@@ -1,5 +1,6 @@
 package com.github.aetherialmist.recipe.javafx;
 
+import com.github.aetherialmist.recipe.javafx.pane.MainPane;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -42,10 +43,8 @@ public class JavaFxApplication extends Application {
         Platform.setImplicitExit(true);
         stage.setTitle("Recipe App");
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/recipe-app.fxml"));
-        VBox root = loader.load();
-        Scene scene = new Scene(root);
+        MainPane root = new MainPane();
+        Scene scene = new Scene(root, 1200, 800);
 
         stage.setScene(scene);
         stage.getIcons().add(new Image("/Pineapple_0.PNG"));
