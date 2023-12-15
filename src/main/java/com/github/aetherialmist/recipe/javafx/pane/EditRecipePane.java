@@ -14,14 +14,18 @@ public class EditRecipePane extends BorderPane {
 
     public EditRecipePane() {
         super();
+        Constants.clearStyle(this);
+
         this.primaryPane = new ScrollPane();
         this.primaryPane.setPadding(new Insets(10, 0, 0, 10));
         this.primaryPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         this.primaryPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        Constants.clearStyle(this.primaryPane);
         this.setCenter(primaryPane);
 
         this.formPane = new VBox();
         this.formPane.setSpacing(10);
+        Constants.clearStyle(this.formPane);
         this.primaryPane.setContent(formPane);
 
         Label label = new Label("Edit Recipe");

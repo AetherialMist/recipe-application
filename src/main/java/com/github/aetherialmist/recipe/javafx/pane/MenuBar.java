@@ -27,16 +27,20 @@ public class MenuBar extends BorderPane {
     @Getter
     private Button editRecipeButton;
 
-    public MenuBar() {
+    public MenuBar(boolean isDebug) {
         super();
         this.setMinHeight(30);
-        this.setStyle(BORDER_STYLE);
+        Constants.clearStyle(this);
+        if (isDebug) {
+            this.setStyle(BORDER_STYLE);
+        }
         this.initLeftSide();
         this.initRightSide();
     }
 
     private void initLeftSide() {
         this.leftSide = new HBox();
+        Constants.clearStyle(this.leftSide);
         this.setLeft(leftSide);
         this.newOrSavePane = new StackPane();
         this.leftSide.getChildren().add(newOrSavePane);

@@ -6,9 +6,13 @@ public class DisplayPane extends StackPane {
 
     private static final String BORDER_STYLE = "-fx-border-color: blue; -fx-border-width: 2px;";
 
-    public DisplayPane() {
+    public DisplayPane(boolean isDebug) {
         super();
-        this.setStyle(BORDER_STYLE);
+        Constants.clearStyle(this);
+        if (isDebug) {
+            this.setStyle(BORDER_STYLE);
+        }
+        this.setStyle("-fx-border-color: black; -fx-border-width: 1px;");
     }
 
 }
