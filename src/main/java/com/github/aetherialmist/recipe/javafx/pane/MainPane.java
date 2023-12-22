@@ -38,7 +38,7 @@ public class MainPane extends BorderPane {
     private void linkNewRecipeButton() {
         menuBar.getNewRecipeButton().setOnAction(event -> {
             displayPane.getChildren().clear();
-            displayPane.getChildren().add(new EditRecipePane());
+            displayPane.getChildren().add(new EditRecipePane("Create"));
             menuBar.swapNewOrSaveButton();
         });
     }
